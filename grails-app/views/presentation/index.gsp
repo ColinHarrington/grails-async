@@ -24,7 +24,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    <title>Grails + Async | Grails outside of the request/response</title>
 
     <meta name="description" content="Grails + Async" />
     <meta name="author" content="Colin Harrington" />
@@ -46,7 +46,8 @@
         When creating your own presentation get rid of this file. Start from scratch, it's fun!
 
     -->
-    <link href="css/impress-demo.css" rel="stylesheet" />
+    <r:require module="presentation"/>
+    <r:layoutResources/>
 
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -103,195 +104,348 @@
 -->
 <div id="impress">
 
-    <!--
-
-        Here is where interesting thing start to happen.
-
-        Each step of the presentation should be an element inside the `#impress` with a class name
-        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
-        the 'camera' shows them on each step of the presentation.
-
-        Positioning information is passed through data attributes.
-
-        In the example below we only specify x and y position of the step element with `data-x="-1000"`
-        and `data-y="-1500` attributes. This means that **the center** of the element (yes, the center)
-        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
-
-        It will not be rotated or scaled.
-
-    -->
-    <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
-        <q>Aren't you just <b>bored</b> with all those slides-based presentations?</q>
+    <div id="title" class="step">
+        <h1>Grails & Async</h1>
+        <p>by <g:link url="https://twitter.com/#!/ColinHarrington">@ColinHarrington</g:link></p>
     </div>
 
-    <!--
-
-        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
-        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
-
-        So in the example below it'll be `step-2`.
-
-        The hash part of the url when this step is active will be `#/step-2`.
-
-        You can also use `#step-2` in a link, to point directly to this particular step.
-
-        Please note, that while `#/step-2` (with slash) would also work in a link it's not recommended.
-        Using classic `id`-based links like `#step-2` makes these links usable also in fallback mode.
-
-    -->
-    <div class="step slide" data-x="0" data-y="-1500">
-        <q>Don't you think that presentations given <strong>in modern browsers</strong> shouldn't <strong>copy the limits</strong> of 'classic' slide decks?</q>
+    <div id="whoami" class="step" data-y="800" data-x="0" data-scale="1">
+        <h2>whoami</h2>
+        Colin Harrington<br/>
+        Senior Consultant<br/>
+        <g:link url="http://www.objectpartners.com">Object Partners</g:link>
+        <br/><br/>
+        @ColinHarrington
+        http://colinharrington.net
+        colin.harrington@objectpartners.com
     </div>
 
-    <div class="step slide" data-x="1000" data-y="-1500">
-        <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
+    <div id="history" class="step" data-y="-800">
+        <h2>History</h2>
     </div>
 
-    <!--
-
-        This is an example of step element being scaled.
-
-        Again, we use a `data-` attribute, this time it's `data-scale="4"`, so it means that this
-        element will be 4 times larger than the others.
-        From presentation and transitions point of view it means, that it will have to be scaled
-        down (4 times) to make it back to it's correct size.
-
-    -->
-    <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
-        <span class="try">then you should try</span>
-        <h1>impress.js<sup>*</sup></h1>
-        <span class="footnote"><sup>*</sup> no rhyme intended</span>
+    <div id="history-http" class="step " data-y="-830" data-x="-100" data-scale="0.2" data-rotate="-90">
+        <h2>HTML</h2>
+        Documents over HTTP<br/>
+        <em>Hypermedia</em>
     </div>
 
-    <!--
-
-        This element introduces rotation.
-
-        Notation shouldn't be a surprise. We use `data-rotate="90"` attribute, meaning that this
-        element should be rotated by 90 degrees clockwise.
-
-    -->
-    <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <p>It's a <strong>presentation tool</strong> <br/>
-            inspired by the idea behind <a href="http://prezi.com">prezi.com</a> <br/>
-            and based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>
+    <div id="history-web2" class="step " data-y="-830" data-x="100" data-scale="0.2" data-rotate="-90">
+        <h2>Web 2.0</h2>
+        Yay! Javascript isn't that bad..
     </div>
 
-    <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
-        <p>visualize your <b>big</b> <span class="thoughts">thoughts</span></p>
+    <div id="history-ajax" class="step " data-y="-830" data-x="300" data-scale="0.2" data-rotate="-90">
+        <h2>Ajax</h2>
+        Look at me Ma, I got data via XHR
     </div>
 
-    <!--
+    <div id="history-ria" class="step" data-y="-830" data-x="500" data-scale="0.2" data-rotate="-90">
+        <h2>Return of the Rich Client</h2>
 
-        And now it gets really exiting! We move into third dimension!
+        <div>
+            <div class="ria-in">
+                <div>HTML5</div>
+                <div>CSS3</div>
+                <div>&lt;Canvas&gt;, <br/>
+                &lt;Video&gt;, etc</div>
+            </div>
 
-        Along with `data-x` and `data-y`, you can define the position on third (Z) axis, with
-        `data-z`. In the example below we use `data-z="-3000"` meaning that element should be
-        positioned far away from us (by 3000px).
+            <div class="ria-out">
+                <div class='strike'>Flash</div>
 
-    -->
-    <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-        <p>and <b>tiny</b> ideas</p>
+                <div class='strike'>Browser Plugins</div>
+
+                <div class='strike'>Applets</div>
+            </div>
+        </div>
+
     </div>
 
-    <!--
-
-        This step here doesn't introduce anything new when it comes to data attributes, but you
-        should notice in the demo that some words of this text are being animated.
-        It's a very basic CSS transition that is applied to the elements when this step element is
-        reached.
-
-        At the very beginning of the presentation all step elements are given the class of `future`.
-        It means that they haven't been visited yet.
-
-        When the presentation moves to given step `future` is changed to `present` class name.
-        That's how animation on this step works - text moves when the step has `present` class.
-
-        Finally when the step is left the `present` class is removed from the element and `past`
-        class is added.
-
-        So basically every step element has one of three classes: `future`, `present` and `past`.
-        Only one current step has the `present` class.
-
-    -->
-    <div id="ing" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
-        <p>by <b class="positioning">positioning</b>, <b class="rotating">rotating</b> and <b class="scaling">scaling</b> them on an infinite canvas</p>
+    <div id="history-js-frameworks" class="step" data-y="-830" data-x="700" data-scale="0.2" data-rotate="0">
+        <h2>Rich Javascript frameworks</h2>
+        <r:img dir="images" file="sencha-large.png"/>
+        <li><g:link url="http://www.sencha.com/">Sencha</g:link> /Touch (was EXTjs..)</li>
+        <r:img dir="images" file="ember.png"/>
+        <li><g:link url="http://emberjs.com">Ember.js</g:link></li>
+        <r:img dir="images" file="backbonejs.png"/>
+        <li><g:link url="http://documentcloud.github.com/backbone/">Backbone.js</g:link></li>
+        <li><g:link url="http://spinejs.com/">Spine.js</g:link></li>
     </div>
 
-    <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
-        <p>the only <b>limit</b> is your <b class="imagination">imagination</b></p>
+    <div id="history-rich-js" class="step" data-y="-630" data-x="700" data-scale="0.2" data-rotate="0">
+        <h2>The new world</h2>
+        <li>Models</li>
+        <li>Views</li>
+        <li>Components</li>
+        <li>Routes/History</li>
+        <li>MVC</li>
+        <li>Eventing Systems</li>
+        <li>Local storage</li>
     </div>
 
-    <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <p>want to know more?</p>
-        <q><a href="http://github.com/bartaz/impress.js">use the source</a>, Luke!</q>
+    <div id="why-async" class="step" data-y="-400" data-x="800" data-scale="1" data-rotate="0">
+        <h1>Why Async?</h1>
     </div>
 
-    <div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2">
-        <p>one more thing...</p>
+    <div id="many-core-world" class="step" data-y="-100" data-x="800" data-scale="0.5" data-rotate="0">
+        <h2>Many-core computing</h2>
+        <r:img file="intel-many-core.jpg"/>
     </div>
 
-    <!--
-
-        And the last one shows full power and flexibility of impress.js.
-
-        You can not only position element in 3D, but also rotate it around any axis.
-        So this one here will get rotated by -40 degrees (40 degrees anticlockwise) around X axis and
-        10 degrees (clockwise) around Y axis.
-
-        You can of course rotate it around Z axis with `data-rotate-z` - it has exactly the same effect
-        as `data-rotate` (these two are basically aliases).
-
-    -->
-    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
-        <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it's</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
-        <span class="footnote">* beat that, prezi ;)</span>
+    <div id="parallel-world" class="step" data-y="-100" data-x="1200" data-scale="0.5" data-rotate="0">
+        <h2>Parallellization</h2>
+        <r:img file="Intel_50_Core_Chip.jpg"/>
+        Concurrency! Procedural, Serial applications don't cut it anymore
     </div>
 
-    <!--
+    <div id="node-js" class="step" data-y="400" data-x="800" data-scale="1.5" data-rotate="180">
+        <r:img file="nodejs.png"/>
+    </div>
 
-        So to make a summary of all the possible attributes used to position presentation steps, we have:
+    <div id="lang-tools" class="step" data-y="200" data-x="700" data-scale="0.25" data-rotate="0" data-z="-500">
+        <r:img file="clojure.png"/>
+        <r:img file="300px-Scala_logo.png"/>
+        <r:img file="groovy-logo.png"/>
+        <r:img file="gpars-logo2.PNG"/>
+        Actors, Closures, Functional concepts.
+    </div>
 
-        * `data-x`, `data-y`, `data-z` -- they define the position of **the center** of step element on
-            the canvas in pixels; their default value is 0;
-        * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` -- they define the rotation of
-            the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
-            are exactly the same;
-        * `data-scale` -- defines the scale of step element; default value is 1
+    <div id="many-applications" class="step" data-y="-600" data-x="1300" data-scale="0.5" data-rotate="-90">
+        <h2>Many Applications</h2>
+        <ul>
+            <li>Financial</li>
+            <li>Devices</li>
+            <li>Gaming</li>
+            <li>Social</li>
+            <li>Hardware Integraton</li>
+            <li>Medical</li>
+            <li>etc..</li>
+        </ul>
+    </div>
 
-        These values are used by impress.js in CSS transformation functions, so for more information consult
-        CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
+    <div id="apps-one-sided" class="step" data-y="-700" data-x="1100" data-scale="0.5" data-rotate="0">
+        <h2>Apps are no longer 1 sided</h2>
+        <r:img file="iphone-settings-app-badge-icon.jpg"/>
+    </div>
+    <div id="apps-they-are" class="step" data-y="-720" data-x="1020" data-scale="0.1" data-rotate="0">
+        They are..
+    </div>
+    <div id="apps-interactive" class="step" data-y="-710" data-x="1020" data-scale="0.1" data-rotate="0">
+        Interactive
+    </div>
+    <div id="apps-dynamic" class="step" data-y="-700" data-x="1020" data-scale="0.1" data-rotate="0">
+        Dynamic
+    </div>
+    <div id="apps-real-time" class="step" data-y="-690" data-x="1020" data-scale="0.1" data-rotate="0">
+        Real-time
+    </div>
+    <div id="apps-collaborative" class="step" data-y="-680" data-x="1020" data-scale="0.1" data-rotate="0">
+        Collaborative
+    </div>
 
-    -->
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    <div id="Async-in-the-browser" class="step" class="step" data-y="-680" data-x="1020" data-scale="0.01" data-rotate="0">
+        <h1>Asyncronocity in the browser</h1>
+        Dive into HTTP
+        Resource Orientated..
+        Client -> request -> Server
+        (fold under the request) GET /index.html...
+        Server locates the resource (or creates it..)
+        Server responds with the resource
+        HTTP 1.1 200 OK
+        date..
+        *Expand to show the resource
+        *expand to show the resource and the hypermedia.
+
+
+        This is essentially a 'pull' technology
+
+        How do we get events from the server?
+        (ask the audience)
+
+        First Attempt:
+        Polling
+        Ask the Server ..
+        Diagrams of the interaction.
+
+        Lots of overhead
+         *network
+         *client
+         *server
+
+        5 minutes of polling every 10 seconds
+        = 30 requests
+        * 1 client
+        * 100 Clients?
+        * 100,000 Clients?
+
+        it doesn't scale
+
+        jQuery Periodical Updater with client decay.
+
+        2nd attempt:
+        Long Polling
+
+        Comet = Umbrella Term
+
+        Comet vs Ajax
+    </div>
+    <div id="comet" class="step" class="step" data-y="-690" data-x="1021" data-scale="0.01" data-rotate="0">
+        Comet = Umbrella term
+        <r:img file="umbre.png"/>
+        = Reverse Ajax
+    </div>
+
+    <div id="ajax" class="step" class="step" data-y="-681" data-x="1021" data-scale="0.01" data-rotate="0">
+        <r:img file="ds-ajax.jpg"/>
+    </div>
+    <div id="comet-cleaner" class="step" class="step" data-y="-681" data-x="1021" data-scale="0.01" data-rotate="0">
+        <r:img file="comet-cleaner.jpg"/>
+    </div>
+    <div id="long-polling-cleaner" class="step" class="step" data-y="-681" data-x="1021" data-scale="0.01" data-rotate="0">
+        Diagram of long polling
+
+        * Issues with Long Polling
+
+        HTTP is limiting
+        Protocol overhead.
+        20byte JSON chunk wrapped in a 1200 byte HTTP protocol.. Headers, caching, control, etags, date modified
+        http://www.lewisbenge.net/index.php/2011/04/html-5-web-sockets-the-real-time-web/
+
+        We need a new protocol for this type of data.
+
+        <h1>Web Sockets</h1>
+
+        The API
+
+        Usage
+
+        Protocol
+        HTTP Upgrading.
+        ws:// and wss:// uri scheme
+        versioned protocol
+        Inner Protocols!!
+
+        * Live demo of websockets updating something, chat?  coloring?
+
+        but:
+        Websockets are
+        Not supported by all browsers
+
+        Just now supported in Tomcat 7.0.xx?
+        Standalone servers: 1 bazillion Node.js websockets
+        Java world, Python
+
+        2012 Realistically..
+        Compromise
+        Long Polling
+        Flash Sockets (UGH!)
+        BlazeDS + Javascript bridge?
+        Silverlight Duplex Services (dead in the water)
+        Java Applet with TCP or straight socket.
+
+        Degrade gracefully on the client and server.
+        (one ring to rule them all
+
+
+    </div>
+
+    <div id="servlet-3" class="step" class="step" data-y="-681" data-x="1021" data-scale="0.01" data-rotate="0">
+        Servlet 3.0 Async
+        thread-per-request (thread per HTTP Connection)
+
+        10x the load?
+
+        Threads
+        Memory usage
+        Thread starvation - Limited pool.
+
+        Expensive Tasks
+        Long running processes
+        Generating Reports
+        Complex 3rd party integration
+        Coordination Services
+        Long Polling
+
+
+        Live Example
+        Fire off Ajax requests. (or just use the browser to create other tabs..
+        /take/nap/10
+
+        change it via jvisualvm
+
+
+
+        </div>
+        <div id="grails-in-tomcat" class="step" class="step" data-y="-681" data-x="1021" data-scale="0.01" data-rotate="0">
+        Diagram of Grails internals in Tomcat
+        start with just a browser -> Server request -> Web Page response
+        Add Javascript + Ajax
+
+        Zoom in on the server to see Tomcat running surrounded by Apache
+        Grails shows up over/inside tomcat with all of its components.
+
+
+        </div>
+        <div id="back-to-the-server" class="step" class="step" data-y="-681" data-x="1021" data-scale="0.01" data-rotate="0">
+        ----------------
+        Back to the Server
+        Spring Application Events
+        Example, Pub/Sub
+
+        Servlet ContextListener
+        Lifecycle
+
+        HTTPSession Lifecycle listeners
+        Request..
+
+        Spring Security Listeners.
+
+        Singleton Beans that can respond to events.
+
+        Message Queues (embedded or external)
+        JMS
+        Show a small example
+        Talk about ActiveMQ, RabbitMQ just went 1.0 recently..
+        Templates.
+        Jesque (using redis)
+
+        Don't run non-critical elements within your HTTP Requests.
+
+        Cron job shouldn't bring down your prod!
+
+        Quartz Scheduler Triggered Tasks.
+
+        Grails Executor Plugin.
+
+        Grails Atmosphere plugin
+    </div>
+
+    <div id="#overview" class="step" data-scale="5">
+
+    </div>
+    <div id="credits" class="step" data-scale="0.1" data-rotate-x="-90" data-rotate-y="0">
+        <ul>
+            <li>http://www.legitreviews.com/images/reviews/1712/slided.jpg</li>
+            <li>http://1.bp.blogspot.com/_yhJlczfj8Cw/TAUEOClt7dI/AAAAAAAACN4/XX7GeaLuNSI/s1600/Intel_50_Core_Chip.jpg</li>
+            <li>http://nodeblog.files.wordpress.com/2011/07/nodejs.png</li>
+            <li>http://java.ociweb.com/mark/clojure/images/clojure.png</li>
+            <li>http://engineering.linkedin.com/sites/default/files/300px-Scala_logo.png</li>
+            <li>http://craigaspinall.com/talks/groovy-baby/images/groovy-logo.png</li>
+            <li>http://gpars.codehaus.org/download/attachments/130514949/gpars-logo2.PNG</li>
+            <li>http://admintell.napco.com/ee/images/uploads/appletell/sg105724_thumb.jpg</li>
+            <li>http://cdn2.iphone4jailbreak.org/forum/wp-content/uploads/iphone-settings-app-badge-icon.jpg</li>
+            <li>http://3.bp.blogspot.com/-5kOG4zsskWY/TdBohGUns-I/AAAAAAAAAAY/tSW9ZBRVcAk/s1600/comet+cleaner.jpg</li>
+            <li>http://www.acspersonalsecurity.com/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/d/s/ds-ajax.jpg</li>
+            <li>http://1.bp.blogspot.com/_8eiTpFJYqEA/TF-ecT5aOKI/AAAAAAAAAXg/GDMzlasK168/s320/umbre.png</li>
+            <li>http://blog.radvision.com/images/2009/20091001-VoipSurvivor-one-ring.jpg</li>
+        </ul>
+
+
     </div>
 
 </div>
 
-<!--
-
-    Hint is not related to impress.js in any way.
-
-    But it can show you how to use impress.js features in creative way.
-
-    When the presentation step is shown (selected) its element gets the class of "active" and the body element
-    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
-    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
-    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
-
-    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
-    the first step of presentation is visible for a couple of seconds.
-
-    ...
-
-    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
-    It's just a quick and dirty workaround to get different hint text for touch devices.
-    In a real world it should be at least placed in separate JS file ... and the touch content should be
-    probably just hidden somewhere in HTML - not hard-coded in the script.
-
-    Just sayin' ;)
-
--->
 <div class="hint">
     <p>Use a spacebar or arrow keys to navigate</p>
 </div>
@@ -301,94 +455,8 @@
     }
 </script>
 
-<!--
-
-    Last, but not least.
-
-    To make all described above really work, you need to include impress.js in the page.
-    I strongly encourage to minify it first.
-
-    In here I just include full source of the script to make it more readable.
-
-    You also need to call a `impress().init()` function to initialize impress.js presentation.
-    And you should do it in the end of your document. Not only because it's a good practice, but also
-    because it should be done when the whole document is ready.
-    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
-
--->
-<script src="js/impress.js"></script>
+<r:layoutResources/>
 <script>impress().init();</script>
-
-<!--
-
-    The `impress()` function also gives you access to the API that controls the presentation.
-
-    Just store the result of the call:
-
-        var api = impress();
-
-    and you will get three functions you can call:
-
-        `api.init()` - initializes the presentation,
-        `api.next()` - moves to next step of the presentation,
-        `api.prev()` - moves to previous step of the presentation,
-        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
-                id or the DOM element; second parameter can be used to define duration of the transition in ms,
-                but it's optional - if not provided default transition duration for the presentation will be used.
-
-    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
-    Don't worry, it wont initialize the presentation again.
-
-    For some example uses of this API check the last part of the source of impress.js where the API
-    is used in event handlers.
-
--->
 
 </body>
 </html>
-
-<!--
-
-    Now you know more or less everything you need to build your first impress.js presentation, but before
-    you start...
-
-    Oh, you've already cloned the code from GitHub?
-
-    You have it open in text editor?
-
-    Stop right there!
-
-    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
-    first needs to grow in your mind.
-
-    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
-
-    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
-    to present. It will get you closer and closer to the layout you'll build later with impress.js.
-
-    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
-    it earlier, because you'll only waste your time fighting with positioning of useless points.
-
-    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about
-    creating awesome and engaging presentations.
-
-    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
-
--->
-
-<!--
-
-    Are you still reading this?
-
-    For real?
-
-    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
-    to congratulate you personally :)
-
-    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
-    or anything you like to drink. And raise a glass for me ;)
-
-    Cheers!
-
--->
-

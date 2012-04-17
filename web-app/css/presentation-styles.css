@@ -1,0 +1,89 @@
+#whoami h2 {
+    font-size:100px;
+    font-weight: bold;
+    /*//border-bottom:10px solid black;*/
+    background-color:#97D0E8;
+    border-radius: 20px;
+    padding:0px 20px;
+    text-align: right;
+}
+.strike {
+    text-decoration: line-through;
+    background-image: url("../images/icons/error-48x48.png");
+
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 56px;
+}
+
+#history {
+     width:1200px;
+}
+
+#history h2 {
+    font-size:100px;
+    border-bottom:10px solid black;
+}
+
+#history-http,
+#history-ria,
+#history-web2,
+#history-ajax {
+    border-top:10px solid black;
+}
+#history-http h2,
+#history-ria h2,
+#history-web2 h2,
+#history-ajax h2,
+#history-js-frameworks h2,
+#history-rich-js h2 {
+    font-size:100px;
+}
+
+#history-ria h2 {
+    font-size:100px;
+    font-weight:bold;
+}
+
+
+#history-ria .ria-in,
+#history-ria .ria-out {
+    padding:20px;
+    margin:0px;
+    border-radius: 20px;
+    background-color: #97D0E8;
+    display: inline-block;
+
+}
+#history-ria .ria-in {
+    margin:0px;
+    border-radius: 20px;
+    background-color: #97D0E8;
+    display: inline-block;
+    float:left;
+}
+#history-ria .ria-out {
+    margin:0px;
+    border-radius: 20px;
+    background-color: #97D0E8;
+    float:right;
+}
+#history-ria .ria-in > div {
+    background-image: url("../images/icons/success-48x48.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 56px;
+}
+#history-js-frameworks img {
+    float:right;
+}
+#parallel-world img {
+    float:right;
+}
+#parallel-world h2 {
+    font-size:100px;
+}
+#why-async h1 {
+    font-size:120px;
+}
+
