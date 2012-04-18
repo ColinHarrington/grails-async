@@ -1,3 +1,6 @@
+h2 {
+    font-size:80px;
+}
 #whoami h2 {
     font-size:100px;
     font-weight: bold;
@@ -6,6 +9,11 @@
     border-radius: 20px;
     padding:0px 20px;
     text-align: right;
+}
+#whoami img {
+    width:300px;
+    float:right;
+    padding-top:40px
 }
 .strike {
     text-decoration: line-through;
@@ -86,4 +94,86 @@
 #why-async h1 {
     font-size:120px;
 }
+#async-in-the-browser h1 {
+    font-size:100px;
+}
+
+#async-in-the-browser .client,
+#server-response .server {
+    background-color: #97D0E8;
+    border-radius: 10px;
+    padding:0px 10px;
+}
+#request, #response {
+    font-family: courier;
+    font-weight: bold;
+    border:10px solid black;
+    border-radius: 20px;
+    background-color:#fff;
+}
+#response {
+    font-size: 1.75em;
+}
+#server-response .server {
+
+}
+#long-polling h2 {
+    font-size:100px;
+}
+#long-polling img {
+    float:right;
+}
+#http-streaming h2,#comet h2 {
+    text-align:center;
+    font-size:80px;
+}
+#comet img {
+    width:400px;
+}
+#websockets h1 {
+    font-size:120px;
+}
+code {
+    font-family: courier;
+    font-weight: bold;
+}
+#websockets1 code,
+#websockets2 code,
+#websockets3 code {
+    font-size:30px;
+    white-space: pre-wrap;
+}
+#realistically-or {
+    text-align: center;
+}
+#realistically-or h2 {
+    font-size:100px;
+    text-align:  left;
+}
+#servlet3 h1 {
+    font-size:150px;
+}
+#servlet3-grails h2 {
+    font-size: 80px
+}
+#servlet3-grails2,
+#servlet3-grails3,
+#websockets1,
+#websockets2,
+#websockets3 {
+    background-color:#ffffff;
+    border-radius: 20px;
+    border:10px solid black;
+}
+#servlet3-grails2 code,
+#servlet3-grails3 code {
+    font-size:30px;
+}
+code {
+    white-space: pre-wrap;
+}
+#credits ul.credits li {
+    fonts-size:10px !important;
+}
+
 
