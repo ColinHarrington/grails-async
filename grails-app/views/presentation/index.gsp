@@ -177,7 +177,7 @@
     </ul>
 </div>
 
-<div id="apps-one-sided" class="step" data-y="-700" data-x="1100" data-scale="0.5" data-rotate="0">
+<div id="apps-one-sided" class="step" data-y="-725" data-x="1100" data-scale="0.5" data-rotate="0">
     <h2>No longer one sided</h2>
     <r:img file="iphone-settings-app-badge-icon.jpg"/>
 </div>
@@ -202,23 +202,13 @@
     Collaborative
 </div>
 
-<div id="async-in-the-browser" class="step" data-y="-700" data-x="-1000" data-scale="0.5" data-rotate="0">
+<div id="async-in-the-browser" class="step" data-y="-750" data-x="-1000" data-scale="0.5" data-rotate="0">
     <h1>Async in the Browser</h1>
+</div>
+
+<div id="async-in-the-browser2" class="step" data-y="-620" data-x="-1000" data-scale="0.5" data-rotate="0">
     <li>HTTP = Resource Orientated..</li>
     <li><span class='client'>Client</span> -> request -> <span class="server">Server</span></li>
-    %{--(fold under the request) GET /index.html...--}%
-    %{--Server locates the resource (or creates it..)--}%
-    %{--Server responds with the resource--}%
-    %{--HTTP 1.1 200 OK--}%
-    %{--date..--}%
-    %{--*Expand to show the resource--}%
-    %{--*expand to show the resource and the hypermedia.--}%
-
-
-    %{--This is essentially a 'pull' technology--}%
-
-    %{--How do we get events from the server?--}%
-    %{--(ask the audience)--}%
 </div>
 
 <div id="request" class="step" data-y="-560" data-x="-1030" data-scale="0.1" data-rotate="0">
@@ -316,14 +306,14 @@ Content-Type: text/html; charset=UTF-8
     We needed a new Protocol
 </div>
 
-<div id="websockets1" class="step" data-y="1900 " data-x="-350" data-scale="0.5" data-rotate="-90">
+<div id="websockets1" class="step" data-y="1900 " data-x="-320" data-scale="0.5" data-rotate="-90">
     <h1>API</h1>
     <g:link url="http://dev.w3.org/html5/websockets/">http://dev.w3.org/html5/websockets/</g:link>
     <br/><br/>
     <code>var myWebSocket = new WebSocket("ws://www.websockets.org");</code>
 </div>
 
-<div id="websockets2" class="step" data-y="1900 " data-x="-48" data-scale="0.5" data-rotate="-90">
+<div id="websockets2" class="step" data-y="1900 " data-x="15" data-scale="0.5" data-rotate="-90">
     <code>myWebSocket.onopen = function(evt) {
     alert("Connection open ...");
 };
@@ -335,12 +325,12 @@ myWebSocket.onclose = function(evt) {
 };</code>
 </div>
 
-<div id="websockets3" class="step" data-y="1900 " data-x="200" data-scale="0.5" data-rotate="-90">
+<div id="websockets3" class="step" data-y="1900 " data-x="280" data-scale="0.5" data-rotate="-90">
     <code>myWebSocket.send("Hello WebSockets!");
 myWebSocket.close();</code>
 </div>
 
-<div id="websockets4" class="step" data-y="1900 " data-x="400" data-scale="0.5" data-rotate="-90">
+<div id="websockets4" class="step" data-y="1900 " data-x="500" data-scale="0.5" data-rotate="-90">
     <h2>Websockets Protocol</h2>
     <li>HTTP Upgrading.</li>
     <li>ws:// and wss:// uri scheme</li>
@@ -348,7 +338,7 @@ myWebSocket.close();</code>
     <li>Inner Protocols!!</li>
 </div>
 
-<div id="websockets-caution" class="step" data-y="1900 " data-x="700" data-scale="0.5" data-rotate="-90">
+<div id="websockets-caution" class="step" data-y="1900 " data-x="800" data-scale="0.5" data-rotate="-90">
     <h2>But..</h2>
     <li>Not supported by all browsers
         <g:link url="http://caniuse.com/#feat=websockets">http://caniuse.com/#feat=websockets</g:link></li>
@@ -356,7 +346,7 @@ myWebSocket.close();</code>
     <li>Standalone: 1 bazillion Node.js websockets implementations, several Java & Python servers</li>
 </div>
 
-<div id="realistically-2012" class="step" data-y="1900" data-x="1080" data-scale="0.5" data-rotate="-90">
+<div id="realistically-2012" class="step" data-y="1900" data-x="1180" data-scale="0.5" data-rotate="-90">
 <h2>2012 Realistic Compromise</h2>
     <li>Long Polling/HTTP Streaming
     <li>Flash Sockets (UGH!)
@@ -364,11 +354,35 @@ myWebSocket.close();</code>
     <li>Silverlight Duplex Services (dead in the water)
     <li>Java Applet with TCP or straight socket.
 </div>
-<div id="realistically-or" class="step" data-y="1900" data-x="1450" data-scale="0.5" data-rotate="-90">
+
+<div id="realistically-or" class="step" data-y="1900" data-x="1550" data-scale="0.5" data-rotate="-90">
     <h2>Or:</h2>
     Degrade gracefully <br/>on the client and server.
     <br/>
     <r:img file="20091001-VoipSurvivor-one-ring.jpg"/>
+</div>
+
+<div id="atmosphere" class="step" data-y="1900" data-x="2100" data-scale="0.5" data-rotate="0">
+    <h1>Atmosphere</h1>
+    "The Asynchronous WebSocket/Comet Framework"<br/>
+    <code>compile ":atmosphere:0.4.2.1"</code>
+</div>
+
+<div id="atmosphere1" class="step" data-y="2200" data-x="2100" data-scale="0.5" data-rotate="0">
+    <p>Client <em>and</em> server side components to support event driven messaging over websockets or graceful degredation to Comet</p>
+    <g:link url="http://grails.org/plugin/atmosphere">http://grails.org/plugin/atmosphere</g:link>
+</div>
+
+<div id="cometd" class="step" data-y="2500" data-x="2100" data-scale="0.5" data-rotate="0">
+    <h1>CometD</h1>
+    <code>compile ":cometd:0.2.2"</code>
+</div>
+
+<div id="cometd1" class="step" data-y="2800" data-x="2100" data-scale="0.5" data-rotate="0">
+    <p>CometD is a scalable HTTP-based event routing bus that uses an Ajax Push technology pattern known as Comet.</p>
+
+    <p>This plugin allows your Grails application to send asynchronous notifications to HTTP clients using CometD and the Bayeux protocol.</p>
+    <g:link url="http://www.grails.org/plugin/cometd">http://www.grails.org/plugin/cometd</g:link>
 </div>
 
 <div id="servlet3" class="step" data-y="-1300" data-x="-1000" data-scale="1" data-rotate="0">
@@ -426,147 +440,309 @@ myWebSocket.close();</code>
 }</code>
  </div>
 
-<div id="back-to-the-server" class="step" data-y="-681" data-x="1021" data-scale="0.01" data-rotate="0">
-%{--------------------}%
-Back to the Server
-%{--Spring Application Events--}%
-%{--Example, Pub/Sub--}%
-
-%{--Servlet ContextListener--}%
-%{--Lifecycle--}%
-%{--Object--}%
-%{--Event--}%
-%{--Listener Interface and Event Class--}%
-%{--Web context (See Accessing the Web Context)--}%
-%{--Initialization and destruction--}%
-
-%{--javax.servlet.ServletContextListener
- void	contextDestroyed(ServletContextEvent sce)
-          Notification that the servlet context is about to be shut down.
- void	contextInitialized(ServletContextEvent sce)
-          Notification that the web application is ready to process requests.
-and--}%
-%{--Attribute added, removed, or replaced--}%
-%{--javax.servlet.ServletContextAttributeListener
- void	attributeAdded(ServletContextAttributeEvent scab)
-          Notification that a new attribute was added to the servlet context.
- void	attributeRemoved(ServletContextAttributeEvent scab)
-          Notification that an existing attribute has been remved from the servlet context.
- void	attributeReplaced(ServletContextAttributeEvent scab)
-          Notification that an attribute on the servlet context has been replaced.
-
-
-and--}%
-%{--ServletContextAttributeEvent--}%
-%{--Session (See Maintaining Client State)--}%
-%{--Creation, invalidation, and timeout--}%
-%{--javax.servlet.http.HttpSessionListener
- void	sessionCreated(HttpSessionEvent se)
-          Notification that a session was created.
- void	sessionDestroyed(HttpSessionEvent se)
-          Notification that a session was invalidated.
-
-and--}%
-%{--HttpSessionEvent--}%
-%{--Attribute added, removed, or replaced--}%
-%{--javax.servlet.http.HttpSessionAttributeListener
-
- void	attributeAdded(HttpSessionBindingEvent se)
-          Notification that an attribute has been added to a session.
- void	attributeRemoved(HttpSessionBindingEvent se)
-          Notification that an attribute has been removed from a session.
- void	attributeReplaced(HttpSessionBindingEvent se)
-          Notification that an attribute has been replaced in a session.
-
-          and--}%
-%{--HttpSessionBindingEvent--}%
-
-%{--HTTPSession Lifecycle listeners--}%
-%{--Request..--}%
-
-%{--Spring Security Listeners.--}%
-
-%{--Singleton Beans that can respond to events.--}%
-
-%{--Message Queues (embedded or external)--}%
-%{--JMS    grails install-plugin jms--}%
-%{--Show a small example--}%
-%{--Talk about ActiveMQ, RabbitMQ just went 1.0 recently..--}%
-%{--Templates.--}%
-%{--Jesque (using redis)--}%
-
-%{--Don't run non-critical elements within your HTTP Requests.--}%
-
-%{--Cron job shouldn't bring down your prod!--}%
-</div>
-<div id="quartz" class="step" data-y="-1300" data-x="1100" data-scale="0.5" data-rotate="-90">
-    <h2>Quartz Scheduler</h2>
-    Triggered Tasks Cron Triggers, custom Triggers.. queue/messaged triggers?
-    <r:img file="quartz-icon.png"/>
+<div id="back-to-the-server" class="step" data-y="-1300" data-x="2200" data-scale="1" data-rotate="0">
+    <h1>Back to the Server</h1>
+    (Grails mostly)
 </div>
 
-%{--Grails Executor Plugin.
-grails install-plugin executor
+<div id="spring-application-events" class="step" data-y="-900" data-x="2200" data-scale="0.5" data-rotate="0">
+    <h2>Spring Application Events</h2>
+    <r:img file="spring-logo.png"/>
+</div>
 
-------------------------
-class someService {
+<div id="publish-event" class="step" data-y="-700" data-x="2200" data-scale="0.5" data-rotate="0">
+    <code>applicationContext.publishEvent(
+    new MyApplicationEvent(...)
+)</code>
+    <div class="footnote">* ApplicationContext extends ApplicationEventPublisher</div>
+</div>
 
-    def myMethod(){
-        ..do some stuff
+
+<div id="application-event" class="step code" data-y="-400" data-x="2200" data-scale="0.5" data-rotate="0">
+<code>class MyApplicationEvent extends ApplicationEvent {
+    public DrFirstErrorSyncEvent(src, ...) {
+        super(src)
+        ...
+    }
+}</code>
+</div>
+
+<div id="application-event-listener" class="step code" data-y="-30" data-x="2200" data-scale="0.5" data-rotate="0">
+<code>class MyApplicationListener implements ApplicationListener{
+    void onApplicationEvent(ApplicationEvent e) {
+        ... Do your thing ...
+    }
+}</code>
+</div>
+
+<div id="built-in" class="step" data-y="-900" data-x="2800" data-scale="0.5" data-rotate="0">
+    <h2>Already there</h2>
+    <li>ServletContextListener</li>
+    <li>ServletContextAttributeListener</li>
+    <li>HttpSessionListener</li>
+    <li>HttpSessionAttributeListener</li>
+    <li>Standard Spring Events</li>
+    <li>Many More..</li>
+</div>
+
+<div id="servlet-context-listener" class="step code smallerCode" data-y="-600" data-x="2800" data-scale="0.5" data-rotate="0">
+    <h2>ServletContextListener</h2>
+<code>void	contextDestroyed(ServletContextEvent sce)
+void	contextInitialized(ServletContextEvent sce)</code>
+</div>
+
+<div id="servlet-context-attributes-listener" class="step code smallerCode" data-y="-300" data-x="2800" data-scale="0.5" data-rotate="0">
+    <h2>ServletContextAttributeListener</h2>
+    <code>void	attributeAdded(ServletContextAttributeEvent scab)
+void	attributeRemoved(ServletContextAttributeEvent scab)
+void	attributeReplaced(ServletContextAttributeEvent scab)</code>
+</div>
+
+<div id="session-listener" class="step code smallerCode" data-y="0" data-x="2800" data-scale="0.5" data-rotate="0">
+    <h2>HttpSessionListener</h2>
+    <code> void	sessionCreated(HttpSessionEvent se)
+void	sessionDestroyed(HttpSessionEvent se)</code>
+</div>
+
+<div id="session-attribute-listener" class="step code smallerCode" data-y="300" data-x="2800" data-scale="0.5" data-rotate="0">
+    <h2>HttpSessionAttributeListener</h2>
+    <code>void	attributeAdded(HttpSessionBindingEvent scab)
+void	attributeRemoved(HttpSessionBindingEvent scab)
+void	attributeReplaced(HttpSessionBindingEvent scab)</code>
+</div>
+
+<div id="spring-security-listeners" class="step" data-y="600" data-x="2800" data-scale="0.5" data-rotate="0">
+    <h2>Spring Security Event Listeners</h2>
+    ...
+</div>
+
+<div id="singletons" class="step" data-y="800" data-x="2800" data-scale="0.5" data-rotate="0">
+    <h2>Singleton Beans</h2>
+    can subscribe to published events (Grails Services, etc.)
+</div>
+
+<div id="message-queues" class="step" data-y="-900" data-x="3400" data-scale="0.5" data-rotate="0">
+    <h2>Message Queues</h2>
+</div>
+
+<div id="message-queues-impls" class="step" data-y="-1100" data-x="3400" data-scale="0.5" data-rotate="-180">
+    <li><r:img file="rabbitmq_logo_strap.png"/>
+    <li><r:img file="activemq-logo.png"/>
+    <li>Jesque > resque > (redis)
+    <li>Many more
+</div>
+
+<div id="message-queues-install" class="step code" data-y="-700" data-x="3400" data-scale="0.5" data-rotate="0">
+<code>BuildConfig.groovy <<
+
+compile ":jms:1.2"</code>
+</div>
+<div id="jms-service-example0" class="step code" data-y="-450" data-x="3400" data-scale="0.5" data-rotate="0">
+    <code>  //standard template and no post processor
+jmsService.send(destination, message)
+    // use the standard template
+jmsService.send(destination, message, postProcessor)</code>
+</div>
+
+<div id="jms-service-example1" class="step code" data-y="-150" data-x="3400" data-scale="0.5" data-rotate="0">
+<code>jmsService.send(
+    queue: "aQueue",
+    msg,
+    "standard",
+    null
+) // send to a literal queue</code>
+    </div>
+
+<div id="jms-service-example2" class="step code" data-y="150" data-x="3400" data-scale="0.5" data-rotate="0">
+<code>jmsService.send(
+    topic: "aTopic",
+    msg,
+    "standard",
+    null
+) // send to a literal topic</code>
+</div>
+
+<div id="jms-service-example3" class="step code" data-y="450" data-x="3400" data-scale="0.5" data-rotate="0">
+<code>jmsService.send(
+    service: "person",
+    msg,
+    "standard",
+    null
+) // send to the queue '«appname».person'</code>
+</div>
+
+<div id="jms-service-example4" class="step code" data-y="800" data-x="3400" data-scale="0.5" data-rotate="0">
+<code>jmsService.send(
+    service: "person",
+    method: "doIt",
+    msg,
+    "standard",
+    null
+) // send to the
+queue '«appname».person.doIt'</code>
+</div>
+<div id="jms-service-example5" class="step code" data-y="1200" data-x="3400" data-scale="0.5" data-rotate="0">
+<code>jmsService.send(
+    app: "remote",
+    service: "person",
+    method: "doIt",
+    msg,
+    "standard",
+    null
+) // send to the
+queue 'remote.person.doIt'</code>
+</div>
+
+<div id="jms-subscribe" class="step" data-y="-900" data-x="4000" data-scale="0.5" data-rotate="0">
+    <h1>Receiving Messages</h1>
+</div>
+
+<div id="jms-subscribe1" class="step code" data-y="-600" data-x="4000" data-scale="0.5" data-rotate="0">
+    <code>class PersonService {
+    static exposes = ["jms"]
+    def onMessage(msg) {
+        // handle message
+    }
+}</code>
+</div>
+
+<div id="jms-subscribe2" class="step code" data-y="-250" data-x="4000" data-scale="0.5" data-rotate="0">
+    <code>class PersonService {
+    static exposes = ["jms"]
+    static destination = "somethingHappened"
+    static isTopic = true
+    static adapter = "custom"
+    def onMessage(msg) {
+        // handle message
+    }
+}</code>
+</div>
+
+<div id="jms-subscribe3" class="step code" data-y="200" data-x="4000" data-scale="0.5" data-rotate="0">
+    <code>import grails.jms.*
+class PersonService {
+    static exposes = ["jms"]
+
+    @Queue(
+        name = "myQueue",
+        selector = "name IS NOT NULL"
+    )
+    def addPerson(msg) {
+        ...
+    }
+}</code>
+</div>
+
+<div id="jms-subscribe4" class="step code" data-y="650" data-x="4000" data-scale="0.5" data-rotate="0">
+    <code>import grails.jms.*
+class PersonService {
+    static exposes = ["jms"]
+
+    @Subscriber(topic = "aTopic")
+    def somethingHappened(msg) {
+        ...
+    }
+}</code>
+</div>
+
+<div id="executor" class="step" data-y="-900" data-x="4600" data-scale="0.5" data-rotate="0">
+    <h2>Executor Plugin</h2>
+    <code>compile ":executor:0.3"</code>
+</div>
+
+<div id="executor-runasync" class="step" data-y="-700" data-x="4600" data-scale="0.5" data-rotate="0">
+    <h2>runAsync closure</h2>
+    takes any closure and passes it through to the executorService.execute
+</div>
+<div id="executor-callAsync" class="step" data-y="-400" data-x="4600" data-scale="0.5" data-rotate="0">
+    <h2>callAsync closure</h2>
+    takes any closure that returns a value and passes it through to the executorService.submit . You will get a Future back that you can work with. This will not bind a session in java 1.5 and only works on 1.6 or later
+</div>
+
+<div id="executor-example" class="step code" data-y="0" data-x="4600" data-scale="0.5" data-rotate="0">
+    <code>class someService {
+    def myMethod() {
         runAsync {
-            //this will be in its own trasaction
-            //since each of these service methods are Transactional
             calcAging()
         }
-        .. do some other stuff while aging is calced in background
+        ...
     }
-
-    def calcAging(){
-        ...do long process
-    }
-}
---------------------------------
-runAsync closure - takes any closure and passes it through to the executorService.execute
-callAsync closure - takes any closure that returns a value and passes it through to the executorService.submit . You will get a Future back that you can work with. This will not bind a session in java 1.5 and only works on 1.6 or later
-
-
-Don't forget GPARS...
---}%
-
-<div id="atmosphere" class="step" data-y="-1300" data-x="1100" data-scale="0.5" data-rotate="-90">
-%{--Grails Atmosphere plugin--}%
-<code>grails install-plugin atmosphere</code>
+}</code>
 </div>
 
-<div id="#overview" class="step" data-scale="3">
+<div id="gpars" class="step" data-y="400" data-x="4600" data-scale="0.5" data-rotate="0">
+    <r:img file="gpars-logo2.PNG"/>
+    <h2>gpars</h2>
+    (Groovy Parallel Systems)
+    <li>Built into Groovy!
+    <li>Clever and clean design
+    <li>Elegant Java and Groovy APIs
+    <li>Flexibility through meta-programming
+    <li>Application-level solutions that scale with number of cores
+</div>
 
+<div id="gpars-features" class="step slide" data-y="900" data-x="4600" data-scale="0.5" data-rotate="0">
+    <li>Concurrent collection processing
+    <li>Composable asynchronous functions
+    <li>Fork/Join abstraction
+    <li>Actor programming model
+    <li>Dataflow concurrency constructs
+    <li>CSP
+    <li>Agent - an thread-safe reference to mutable state
+    <li>STM (Software Transactional Memory)
+</div>
+
+<div id="quartz" class="step" data-y="1300" data-x="4600" data-scale="0.5" data-rotate="0">
+    <r:img file="quartz-icon.png"/>
+    <h2>Quartz Scheduler</h2>
+    <li>Triggered Tasks
+    <li>Cron Triggers
+    <li>Custom Triggers.. queue/messaged triggers?
+</div>
+
+<div id="others" class="step" data-y="1600" data-x="4600" data-scale="0.5" data-rotate="0">
+    <h2>Others?</h2>
+    <li>XMPP Plugin
+    <li>Persistant queries (datastores)
+    <li>???
+</div>
+
+<div id="questions" class="step" data-y="2000" data-x="4600" data-scale="0.5" data-rotate="0">
+    <h1>Questions?</h1>
+    <r:img file="question-mark.jpg"/>
+</div>
+
+<div id="thank-you" class="step" data-scale="6" data-y="0" data-x="2000">
+    <h1>Thank you!</h1>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <g:link url="https://twitter.com/#!/ColinHarrington">@ColinHarrington</g:link>
 </div>
 
 <div id="credits" class="step" data-scale="0.1" data-rotate-x="-90" data-rotate-y="0">
     <h2>Credits</h2>
-    <ul class="credits">
-        <li>http://www.legitreviews.com/images/reviews/1712/slided.jpg</li>
-        <li>http://1.bp.blogspot.com/_yhJlczfj8Cw/TAUEOClt7dI/AAAAAAAACN4/XX7GeaLuNSI/s1600/Intel_50_Core_Chip.jpg</li>
-        <li>http://nodeblog.files.wordpress.com/2011/07/nodejs.png</li>
-        <li>http://java.ociweb.com/mark/clojure/images/clojure.png</li>
-        <li>http://engineering.linkedin.com/sites/default/files/300px-Scala_logo.png</li>
-        <li>http://craigaspinall.com/talks/groovy-baby/images/groovy-logo.png</li>
-        <li>http://gpars.codehaus.org/download/attachments/130514949/gpars-logo2.PNG</li>
-        <li>http://admintell.napco.com/ee/images/uploads/appletell/sg105724_thumb.jpg</li>
-        <li>http://cdn2.iphone4jailbreak.org/forum/wp-content/uploads/iphone-settings-app-badge-icon.jpg</li>
-        <li>http://3.bp.blogspot.com/-5kOG4zsskWY/TdBohGUns-I/AAAAAAAAAAY/tSW9ZBRVcAk/s1600/comet+cleaner.jpg</li>
-        <li>http://www.acspersonalsecurity.com/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/d/s/ds-ajax.jpg</li>
-        <li>http://1.bp.blogspot.com/_8eiTpFJYqEA/TF-ecT5aOKI/AAAAAAAAAXg/GDMzlasK168/s320/umbre.png</li>
-        <li>http://blog.radvision.com/images/2009/20091001-VoipSurvivor-one-ring.jpg</li>
-        <li>http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_stream.jpg</li>
-        <li>http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_longpoll.jpg</li>
-        <li>http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_poll.jpg</li>
-        <li>http://quartz-scheduler.org/images/logos/logo-quartz-scheduler.png</li>
+    
+        http://www.legitreviews.com/images/reviews/1712/slided.jpg
+        http://1.bp.blogspot.com/_yhJlczfj8Cw/TAUEOClt7dI/AAAAAAAACN4/XX7GeaLuNSI/s1600/Intel_50_Core_Chip.jpg
+        http://nodeblog.files.wordpress.com/2011/07/nodejs.png
+        http://java.ociweb.com/mark/clojure/images/clojure.png
+        http://engineering.linkedin.com/sites/default/files/300px-Scala_logo.png
+        http://craigaspinall.com/talks/groovy-baby/images/groovy-logo.png
+        http://gpars.codehaus.org/download/attachments/130514949/gpars-logo2.PNG
+        http://admintell.napco.com/ee/images/uploads/appletell/sg105724_thumb.jpg
+        http://cdn2.iphone4jailbreak.org/forum/wp-content/uploads/iphone-settings-app-badge-icon.jpg
+        http://3.bp.blogspot.com/-5kOG4zsskWY/TdBohGUns-I/AAAAAAAAAAY/tSW9ZBRVcAk/s1600/comet+cleaner.jpg
+        http://www.acspersonalsecurity.com/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/d/s/ds-ajax.jpg
+        http://1.bp.blogspot.com/_8eiTpFJYqEA/TF-ecT5aOKI/AAAAAAAAAXg/GDMzlasK168/s320/umbre.png
+        http://blog.radvision.com/images/2009/20091001-VoipSurvivor-one-ring.jpg
+        http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_stream.jpg
+        http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_longpoll.jpg
+        http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_poll.jpg
+        http://quartz-scheduler.org/images/logos/logo-quartz-scheduler.png
         http://quartz-scheduler.org/images/home/quartz-icon.png
         http://2.bp.blogspot.com/_dbECP0yvozc/TL8vH1PhGGI/AAAAAAAACwg/Rg3O0o8lqxw/s200/rabbitmq_logo.png
         http://www.rabbitmq.com/img/rabbitmq_logo_strap.png
         http://activemq.apache.org/images/activemq-logo.png
-    </ul>
+        http://www.automatedbusinesslogic.com/_/rsrc/1313079021776/architecture/framework-integration/framework-integration---spring/Spring%20Logo.png?height=200&width=200
 
 </div>
 

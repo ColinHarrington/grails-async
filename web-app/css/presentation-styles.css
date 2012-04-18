@@ -1,20 +1,29 @@
-h2 {
-    font-size:80px;
+h1 {
+    font-size: 100px;
+    font-weight:bold;
 }
+
+h2 {
+    font-size: 75px;
+    font-weight: bold;
+}
+
 #whoami h2 {
-    font-size:100px;
+    font-size: 100px;
     font-weight: bold;
     /*//border-bottom:10px solid black;*/
-    background-color:#97D0E8;
+    background-color: #97D0E8;
     border-radius: 20px;
-    padding:0px 20px;
+    padding: 0px 20px;
     text-align: right;
 }
+
 #whoami img {
-    width:300px;
-    float:right;
-    padding-top:40px
+    width: 300px;
+    float: right;
+    padding-top: 40px
 }
+
 .strike {
     text-decoration: line-through;
     background-image: url("../images/icons/error-48x48.png");
@@ -25,155 +34,215 @@ h2 {
 }
 
 #history {
-     width:1200px;
+    width: 1200px;
 }
 
 #history h2 {
-    font-size:100px;
-    border-bottom:10px solid black;
+    font-size: 100px;
+    border-bottom: 10px solid black;
 }
 
 #history-http,
 #history-ria,
 #history-web2,
 #history-ajax {
-    border-top:10px solid black;
+    border-top: 10px solid black;
 }
+
 #history-http h2,
 #history-ria h2,
 #history-web2 h2,
 #history-ajax h2,
 #history-js-frameworks h2,
 #history-rich-js h2 {
-    font-size:100px;
+    font-size: 100px;
 }
 
 #history-ria h2 {
-    font-size:100px;
-    font-weight:bold;
+    font-size: 100px;
+    font-weight: bold;
 }
-
 
 #history-ria .ria-in,
 #history-ria .ria-out {
-    padding:20px;
-    margin:0px;
+    padding: 20px;
+    margin: 0px;
     border-radius: 20px;
     background-color: #97D0E8;
     display: inline-block;
 
 }
+
 #history-ria .ria-in {
-    margin:0px;
+    margin: 0px;
     border-radius: 20px;
     background-color: #97D0E8;
     display: inline-block;
-    float:left;
+    float: left;
 }
+
 #history-ria .ria-out {
-    margin:0px;
+    margin: 0px;
     border-radius: 20px;
     background-color: #97D0E8;
-    float:right;
+    float: right;
 }
+
 #history-ria .ria-in > div {
     background-image: url("../images/icons/success-48x48.png");
     background-repeat: no-repeat;
     background-position: left;
     padding-left: 56px;
 }
+
 #history-js-frameworks img {
-    float:right;
-}
-#parallel-world img {
-    float:right;
-}
-#parallel-world h2 {
-    font-size:100px;
-}
-#why-async h1 {
-    font-size:120px;
-}
-#async-in-the-browser h1 {
-    font-size:100px;
+    float: right;
 }
 
-#async-in-the-browser .client,
+#parallel-world img {
+    float: right;
+}
+
+#parallel-world h2 {
+    font-size: 100px;
+}
+
+#why-async h1 {
+    font-size: 120px;
+}
+
+#async-in-the-browser h1 {
+    font-size: 100px;
+}
+
+#async-in-the-browser2 .client,
 #server-response .server {
     background-color: #97D0E8;
     border-radius: 10px;
-    padding:0px 10px;
+    padding: 0px 10px;
 }
+
 #request, #response {
     font-family: courier;
     font-weight: bold;
-    border:10px solid black;
+    border: 10px solid black;
     border-radius: 20px;
-    background-color:#fff;
+    background-color: #fff;
 }
+
 #response {
     font-size: 1.75em;
 }
+
 #server-response .server {
 
 }
+
 #long-polling h2 {
-    font-size:100px;
+    font-size: 100px;
 }
+
 #long-polling img {
-    float:right;
+    float: right;
 }
-#http-streaming h2,#comet h2 {
-    text-align:center;
-    font-size:80px;
+
+#http-streaming h2, #comet h2 {
+    text-align: center;
+    font-size: 80px;
 }
+
 #comet img {
-    width:400px;
+    width: 400px;
 }
+
 #websockets h1 {
-    font-size:120px;
+    font-size: 120px;
 }
+
 code {
     font-family: courier;
     font-weight: bold;
 }
+
 #websockets1 code,
 #websockets2 code,
 #websockets3 code {
-    font-size:30px;
+    font-size: 30px;
     white-space: pre-wrap;
 }
+
 #realistically-or {
     text-align: center;
 }
+
 #realistically-or h2 {
-    font-size:100px;
-    text-align:  left;
+    font-size: 100px;
+    text-align: left;
 }
+
 #servlet3 h1 {
-    font-size:150px;
+    font-size: 150px;
 }
+
 #servlet3-grails h2 {
     font-size: 80px
 }
+
 #servlet3-grails2,
 #servlet3-grails3,
 #websockets1,
 #websockets2,
-#websockets3 {
-    background-color:#ffffff;
+#websockets3,
+#publish-event,
+.code {
+    background-color: #ffffff;
     border-radius: 20px;
-    border:10px solid black;
+    border: 10px solid black;
 }
+
 #servlet3-grails2 code,
 #servlet3-grails3 code {
-    font-size:30px;
+    font-size: 30px;
 }
+
 code {
     white-space: pre-wrap;
+    font-family: courier;
+    font-size:30px;
 }
-#credits ul.credits li {
-    fonts-size:10px !important;
+
+#credits {
+    fonts-size: 10px !important;
+}
+
+#back-to-the-server {
+    text-align: center;
+}
+.footnote {
+    font-size:20px;
+}
+#spring-application-events img {
+    float:right;
+}
+.smallerCode  code {
+    font-size:20px;
+}
+#servlet-context-attributes-listener h2,
+#session-attribute-listener h2{
+    font-size:50px;
+}
+#gpars img {
+    float:right;
+}
+#gpars-features li {
+    font-size:40px;
+    line-height: 50px;
+}
+#quartz img {
+    float:right;
+}
+#questions {
+    text-align: center;
 }
 
 
