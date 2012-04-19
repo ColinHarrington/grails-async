@@ -1,24 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" %><!doctype html>
-
-<!--
-
-    So you'd like to know how to use impress.js?
-
-    You've made the first, very important step -- you're reading the source code.
-    And that's how impress.js presentations are built -- with HTML and CSS code.
-
-    Believe me, you need quite decent HTML and CSS skills to be able to use impress.js effectively.
-    And what is even more important, you need to be a designer, too, because there are no default
-    styles for impress.js presentations, there is no default or automatic layout for them.
-
-    You need to design and build it by hand.
-
-    So...
-
-    Would you still like to know how to use impress.js?
-
--->
-
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -460,7 +440,7 @@ myWebSocket.close();</code>
 
 <div id="application-event" class="step code" data-y="-400" data-x="2200" data-scale="0.5" data-rotate="0">
 <code>class MyApplicationEvent extends ApplicationEvent {
-    public DrFirstErrorSyncEvent(src, ...) {
+    public MyApplicationEvent(src, ...) {
         super(src)
         ...
     }
