@@ -692,38 +692,38 @@ class PersonService {
     <r:img file="question-mark.jpg"/>
 </div>
 
-<div id="thank-you" class="step" data-scale="6" data-y="0" data-x="2000">
+<div id="thank-you" class="step" data-scale="1" data-y="2000" data-x="7000" data-rotate="0">
     <h1>Thank you!</h1>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/>
     <g:link url="https://twitter.com/#!/ColinHarrington">@ColinHarrington</g:link>
 </div>
 
 <div id="credits" class="step" data-scale="0.1" data-rotate-x="-90" data-rotate-y="0">
     <h2>Credits</h2>
     
-        http://www.legitreviews.com/images/reviews/1712/slided.jpg
-        http://1.bp.blogspot.com/_yhJlczfj8Cw/TAUEOClt7dI/AAAAAAAACN4/XX7GeaLuNSI/s1600/Intel_50_Core_Chip.jpg
-        http://nodeblog.files.wordpress.com/2011/07/nodejs.png
-        http://java.ociweb.com/mark/clojure/images/clojure.png
-        http://engineering.linkedin.com/sites/default/files/300px-Scala_logo.png
-        http://craigaspinall.com/talks/groovy-baby/images/groovy-logo.png
-        http://gpars.codehaus.org/download/attachments/130514949/gpars-logo2.PNG
-        http://admintell.napco.com/ee/images/uploads/appletell/sg105724_thumb.jpg
-        http://cdn2.iphone4jailbreak.org/forum/wp-content/uploads/iphone-settings-app-badge-icon.jpg
-        http://3.bp.blogspot.com/-5kOG4zsskWY/TdBohGUns-I/AAAAAAAAAAY/tSW9ZBRVcAk/s1600/comet+cleaner.jpg
-        http://www.acspersonalsecurity.com/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/d/s/ds-ajax.jpg
-        http://1.bp.blogspot.com/_8eiTpFJYqEA/TF-ecT5aOKI/AAAAAAAAAXg/GDMzlasK168/s320/umbre.png
-        http://blog.radvision.com/images/2009/20091001-VoipSurvivor-one-ring.jpg
-        http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_stream.jpg
-        http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_longpoll.jpg
-        http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_poll.jpg
-        http://quartz-scheduler.org/images/logos/logo-quartz-scheduler.png
-        http://quartz-scheduler.org/images/home/quartz-icon.png
-        http://2.bp.blogspot.com/_dbECP0yvozc/TL8vH1PhGGI/AAAAAAAACwg/Rg3O0o8lqxw/s200/rabbitmq_logo.png
-        http://www.rabbitmq.com/img/rabbitmq_logo_strap.png
-        http://activemq.apache.org/images/activemq-logo.png
-        http://www.automatedbusinesslogic.com/_/rsrc/1313079021776/architecture/framework-integration/framework-integration---spring/Spring%20Logo.png?height=200&width=200
-
+<pre style="font-size:15px;">http://www.legitreviews.com/images/reviews/1712/slided.jpg
+http://1.bp.blogspot.com/_yhJlczfj8Cw/TAUEOClt7dI/AAAAAAAACN4/XX7GeaLuNSI/s1600/Intel_50_Core_Chip.jpg
+http://nodeblog.files.wordpress.com/2011/07/nodejs.png
+http://java.ociweb.com/mark/clojure/images/clojure.png
+http://engineering.linkedin.com/sites/default/files/300px-Scala_logo.png
+http://craigaspinall.com/talks/groovy-baby/images/groovy-logo.png
+http://gpars.codehaus.org/download/attachments/130514949/gpars-logo2.PNG
+http://admintell.napco.com/ee/images/uploads/appletell/sg105724_thumb.jpg
+http://cdn2.iphone4jailbreak.org/forum/wp-content/uploads/iphone-settings-app-badge-icon.jpg
+http://3.bp.blogspot.com/-5kOG4zsskWY/TdBohGUns-I/AAAAAAAAAAY/tSW9ZBRVcAk/s1600/comet+cleaner.jpg
+http://www.acspersonalsecurity.com/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/d/s/ds-ajax.jpg
+http://1.bp.blogspot.com/_8eiTpFJYqEA/TF-ecT5aOKI/AAAAAAAAAXg/GDMzlasK168/s320/umbre.png
+http://blog.radvision.com/images/2009/20091001-VoipSurvivor-one-ring.jpg
+http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_stream.jpg
+http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_longpoll.jpg
+http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/topic/com.ibm.websphere.ajax.devguide.help/images/PubSub_poll.jpg
+http://quartz-scheduler.org/images/logos/logo-quartz-scheduler.png
+http://quartz-scheduler.org/images/home/quartz-icon.png
+http://2.bp.blogspot.com/_dbECP0yvozc/TL8vH1PhGGI/AAAAAAAACwg/Rg3O0o8lqxw/s200/rabbitmq_logo.png
+http://www.rabbitmq.com/img/rabbitmq_logo_strap.png
+http://activemq.apache.org/images/activemq-logo.png
+http://www.automatedbusinesslogic.com/_/rsrc/1313079021776/architecture/framework-integration/framework-integration---spring/Spring%20Logo.png?height=200&width=200
+</pre>
 </div>
 
 </div>

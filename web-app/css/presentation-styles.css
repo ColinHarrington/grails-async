@@ -211,8 +211,11 @@ code {
     font-size:30px;
 }
 
-#credits {
+#credits pre{
     fonts-size: 10px !important;
+}
+#credits h2 {
+    font-size:75px;
 }
 
 #back-to-the-server {
@@ -243,6 +246,9 @@ code {
 }
 #questions {
     text-align: center;
+}
+#thank-you a {
+    float:right;
 }
 
 
