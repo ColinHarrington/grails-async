@@ -448,7 +448,7 @@ myWebSocket.close();</code>
 </div>
 
 <div id="application-event-listener" class="step code" data-y="-30" data-x="2200" data-scale="0.5" data-rotate="0">
-<code>class MyApplicationListener implements ApplicationListener{
+<code>class MyApplicationListener implements ApplicationListener {
     void onApplicationEvent(ApplicationEvent e) {
         ... Do your thing ...
     }
