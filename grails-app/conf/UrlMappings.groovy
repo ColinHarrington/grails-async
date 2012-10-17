@@ -9,7 +9,9 @@ class UrlMappings {
 
         "/nap/$action/$seconds"(controller: 'nap')
 
-        "/"(view: "/impress")
+        "/"(controller:'presentation', action: 'index')
+
+        "/impress"(view: "/impress")
 
         "500"(view: '/error')
     }
