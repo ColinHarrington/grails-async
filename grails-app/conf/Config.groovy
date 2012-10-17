@@ -93,3 +93,5 @@ log4j = {
 }
 
 grails.plugin.databasesession.enabled = false
+
+grails.plugin.cloudfoundry.appname = 'async-presentation-2gx'

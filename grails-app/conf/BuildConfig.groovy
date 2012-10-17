@@ -29,6 +29,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo "http://maven.springframework.org/milestone/"
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
@@ -52,5 +53,6 @@ grails.project.dependency.resolution = {
             exclude 'database-session'
         }
         compile ':cloud-support:1.0.8'
+        compile ":cloud-foundry:1.2.3"
     }
 }
