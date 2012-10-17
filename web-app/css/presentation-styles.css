@@ -250,5 +250,11 @@ code {
 #thank-you a {
     float:right;
 }
+#spring-events-publishEvent ul {
+    list-style: disc;
+}
+#spring-events-publishEvent li {
+    margin-left:80px;
+}
 
 

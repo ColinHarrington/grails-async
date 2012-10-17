@@ -141,7 +141,7 @@
     <r:img file="300px-Scala_logo.png"/>
     <r:img file="groovy-logo.png"/>
     <r:img file="gpars-logo2.PNG"/>
-    Actors, Closures, Functional concepts.
+    vert.x, Actors, Closures, Functional concepts.
 </div>
 
 <div id="many-applications" class="step" data-y="-600" data-x="1300" data-scale="0.5" data-rotate="-90">
@@ -223,6 +223,10 @@ Content-Type: text/html; charset=UTF-8
     <li>Javascript</li>
     <li>etc.</li>
 
+</div>
+
+<div id="how" class="step" data-y="-300" data-x="-1500" data-scale="0.5" data-rotate="0">
+    <h2>How do I get Events?</h2>
 </div>
 
 <div id="polling" class="step" data-y="0" data-x="-1000" data-scale="0.5" data-rotate="0">
@@ -322,7 +326,7 @@ myWebSocket.close();</code>
     <h2>But..</h2>
     <li>Not supported by all browsers
         <g:link url="http://caniuse.com/#feat=websockets">http://caniuse.com/#feat=websockets</g:link></li>
-    <li>Just now <g:link url="https://issues.apache.org/bugzilla/show_bug.cgi?id=51181#c61">supported in Tomcat 7.0.27</g:link></li>
+    <li>Now <g:link url="https://issues.apache.org/bugzilla/show_bug.cgi?id=51181#c61">supported in Tomcat 7.0.27</g:link></li>
     <li>Standalone: 1 bazillion Node.js websockets implementations, several Java & Python servers</li>
 </div>
 
@@ -451,6 +455,37 @@ myWebSocket.close();</code>
 <code>class MyApplicationListener implements ApplicationListener {
     void onApplicationEvent(ApplicationEvent e) {
         ... Do your thing ...
+    }
+}</code>
+</div>
+
+<div id="spring-events-plugin" class="step" data-y="300" data-x="2200" data-scale="0.5" data-rotate="0">
+    <h2>Spring Events Plugin</h2>
+    <code>compile ":spring-events:1.2"</code>
+</div>
+
+<div id="spring-events-publishEvent" class="step" data-y="600" data-x="2200" data-scale="0.5" data-rotate="0">
+    <h3>Adds some Beans:</h3>
+    <ul>
+        <li>applicationEventMulticaster</li>
+        <li>asyncApplicationEventMulticaster</li>
+    </ul>
+    <br/>
+    <h3>Adds a publishEvent() to:</h3>
+    <ul>
+        <li>Controllers</li>
+        <li>Services</li>
+        <li>Domains</li>
+    </ul>
+</div>
+
+<div id="spring-events-config" class="step" data-y="1000" data-x="2200" data-scale="0.5" data-rotate="0">
+    <h3>Overriding the dependencies of the multicaster in Config.groovy:</h3>
+    <code>beans {
+    asyncApplicationEventMulticaster {
+        errorHandler = new ErrorHandlerImpl()
+        taskExecutor = ...
+        retryScheduler = ...
     }
 }</code>
 </div>
@@ -726,6 +761,7 @@ http://www.automatedbusinesslogic.com/_/rsrc/1313079021776/architecture/framewor
 </pre>
 </div>
 
+<div id="overview" class="step" data-scale="6">
 </div>
 
 <div class="hint">
