@@ -256,5 +256,8 @@ code {
 #spring-events-publishEvent li {
     margin-left:80px;
 }
+#events-push-description {
+    font-size: 36px;
+}
 
 

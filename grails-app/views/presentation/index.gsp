@@ -369,6 +369,51 @@ myWebSocket.close();</code>
     <g:link url="http://www.grails.org/plugin/cometd">http://www.grails.org/plugin/cometd</g:link>
 </div>
 
+<div id="events-push" class="step" data-y="3200" data-x="2100" data-scale="0.5" data-rotate="0">
+    <h1>Events Push Plugin</h1>
+    <code>compile ":events-push:1.0.M3"</code>
+    <g:link url="http://grails.org/plugin/events-push">http://grails.org/plugin/events-push</g:link>
+</div>
+
+<div id="events-push-description" class="step" data-y="3500" data-x="2100" data-scale="0.5" data-rotate="0">
+    <blockquote>"Events-push is a client-side events bus based on the superbe portable push library Atmosphere and Grails platform-core plugin for events propagation/listening. It simply allows your client to listen to server-side events and push data. It uses WebSockets by default and failbacks to Comet method if required (server not compliant, browser too old...)"</blockquote>
+    <g:link url="https://github.com/smaldini/grails-events-push">https://github.com/smaldini/grails-events-push</g:link>
+</div>
+
+<div id="events-push-description" class="step" data-y="3500" data-x="2100" data-scale="0.5" data-rotate="0">
+    <blockquote>"Events-push is a client-side events bus based on the superbe portable push library Atmosphere and Grails platform-core plugin for events propagation/listening. It simply allows your client to listen to server-side events and push data. It uses WebSockets by default and failbacks to Comet method if required (server not compliant, browser too old...)"</blockquote>
+    <g:link url="https://github.com/smaldini/grails-events-push">https://github.com/smaldini/grails-events-push</g:link>
+</div>
+
+<div id="events-push-example" class="step code" data-y="3800" data-x="2100" data-scale="0.5" data-rotate="0">
+    <h2>MyEvents.groovy</h2>
+    <code>events = {
+    'savedTodo' browser:true
+    //allows browser push on this topic
+}</code>
+</div>
+
+<div id="events-push-exampleService" class="step code" data-y="4200" data-x="2100" data-scale="0.5" data-rotate="0">
+<h2>MyService.groovy</h2>
+<code>//will receive client events from 'saveTodo' topic
+    @Listener(namespace='browser') saveTodo(Map data){
+    //...
+    event('savedTodo', data)
+    // will trigger registered browsers on 'savedTodo' topic
+}</code>
+</div>
+
+<div id="events-push-exampleView" class="step code" data-y="4700" data-x="2100" data-scale="0.5" data-rotate="0">
+    <h2>someView.gsp</h2>
+    <code>&lt;r:require module="grailsEvents"/&gt;
+    &lt;r:script&gt;
+    var grailsEvents = new grails.Events("http://localhost:8080/app/");
+    grailsEvents.send('saveTodo', data);
+    grailsEvents.on('savedTodo', function(data){...});
+    &lt;/r:script&gt;</code>
+</div>
+
+
 <div id="servlet3" class="step" data-y="-1300" data-x="-1000" data-scale="1" data-rotate="0">
     <h1>Servlet 3.0 Async</h1>
 </div>
